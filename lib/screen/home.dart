@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/screen/components/mydrawe.dart';
 import '../custom_widgets/menu_card.dart';
 import '../custom_widgets/promotional_banner.dart';
 import '../custom_widgets/popular_shops.dart';
@@ -49,15 +50,21 @@ class Home extends StatelessWidget
         actions: [
           Padding(
             padding: const EdgeInsets.all(9.0),
+            child: IconButton(onPressed: (){}, icon: Icon(Icons.favorite,color: Colors.pink,size: 29,)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(9.0),
             child: CircleAvatar(
               backgroundImage: NetworkImage("https://i.pravatar.cc/300"),
             ),
           ),
         ],
       ),
+      drawer:MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 20,),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white30,

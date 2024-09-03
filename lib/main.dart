@@ -13,6 +13,7 @@ class Main extends StatelessWidget
         brightness: Brightness.light,
         appBarTheme: AppBarTheme(
           foregroundColor: Colors.black,
+          color: Colors.white,
           titleTextStyle: TextStyle(fontWeight: FontWeight.w800,fontSize: 31,color: Colors.black),
           centerTitle: false,
         ),
@@ -30,6 +31,10 @@ class Main extends StatelessWidget
         ),
         inputDecorationTheme: InputDecorationTheme(
           prefixIconColor: Colors.black,
+        ),
+        dividerTheme: DividerThemeData(
+          thickness: 0.4,
+          space: 7
         )
       ),
       darkTheme: ThemeData(
@@ -38,6 +43,24 @@ class Main extends StatelessWidget
             foregroundColor: Colors.black,
             titleTextStyle: TextStyle(fontWeight: FontWeight.w800,fontSize: 31,color: Colors.white),
             centerTitle: false,
+          ),
+        chipTheme: ChipThemeData(
+            backgroundColor: Colors.pink,
+            shadowColor: Colors.pink,
+            elevation: 2,
+            labelStyle: TextStyle(
+                color: Colors.white
+            )
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.pink),
+                foregroundColor: MaterialStateProperty.all(Colors.white)
+            )
+        ),
+          dividerTheme: DividerThemeData(
+              thickness: 0.4,
+              space: 7
           )
       ),
       themeMode: ThemeMode.system,
