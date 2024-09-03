@@ -3,15 +3,13 @@ Widget PopularShops(List popular_shop_list)
 {
  return Container(
    margin: EdgeInsets.all(10),
-   decoration: BoxDecoration(
-   ),
    child: Column(
      crossAxisAlignment: CrossAxisAlignment.start,
      children: [
        Text("Popular Shops",style: TextStyle(fontSize: 25.5,fontWeight: FontWeight.w900),),
        Container(
          width: 400,
-         height: 200,
+         height: 170,
          child: ListView.builder(
            scrollDirection: Axis.horizontal,
            itemCount:popular_shop_list.length ,

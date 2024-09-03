@@ -34,13 +34,11 @@ class Main extends StatelessWidget
         ),
         dividerTheme: DividerThemeData(
           thickness: 0.4,
-          space: 7
         )
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
           appBarTheme: AppBarTheme(
-            foregroundColor: Colors.black,
             titleTextStyle: TextStyle(fontWeight: FontWeight.w800,fontSize: 31,color: Colors.white),
             centerTitle: false,
           ),
@@ -60,7 +58,6 @@ class Main extends StatelessWidget
         ),
           dividerTheme: DividerThemeData(
               thickness: 0.4,
-              space: 7
           )
       ),
       themeMode: ThemeMode.system,

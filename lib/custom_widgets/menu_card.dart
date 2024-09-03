@@ -9,7 +9,7 @@ Widget Menu_Card(BuildContext context,int index,List lst)
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset("${lst[index]["item_pic"]}",height: 50,width: 50),
+        Image.asset("${lst[index]["item_pic"]}",height: 40,width: 40),
         Text("${lst[index]['item_name']}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)
       ],
     ),
