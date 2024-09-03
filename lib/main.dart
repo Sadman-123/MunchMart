@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/screen/home.dart';
 void main()
 {
@@ -8,7 +10,7 @@ class Main extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
         appBarTheme: AppBarTheme(

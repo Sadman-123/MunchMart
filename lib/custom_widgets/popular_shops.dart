@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-Widget PopularShops(List popular_shop_list)
+import 'package:get/get.dart';
+import 'package:untitled/controller/home_controller.dart';
+HomeController home2=Get.put(HomeController());
+Widget PopularShops()
 {
  return Container(
    margin: EdgeInsets.all(10),
@@ -12,7 +15,7 @@ Widget PopularShops(List popular_shop_list)
          height: 170,
          child: ListView.builder(
            scrollDirection: Axis.horizontal,
-           itemCount:popular_shop_list.length ,
+           itemCount:home2.popular_shop_list.length ,
            itemBuilder: (context, index) {
              return  Container(
                height: 140,
@@ -22,13 +25,13 @@ Widget PopularShops(List popular_shop_list)
                  image: DecorationImage(
                    fit: BoxFit.cover,
                    image: NetworkImage(
-                     "${popular_shop_list[index]['shop_pic']}",
+                     "${home2.popular_shop_list[index]['shop_pic']}",
                    ),
                  ),
                ),
                child: Align(
                    alignment: Alignment(0, 1),
-                   child: Chip(label: Text("${popular_shop_list[index]['deal']} deal"))
+                   child: Chip(label: Text("${home2.popular_shop_list[index]['deal']} deal"))
                ),
                margin: EdgeInsets.all(10),
              );

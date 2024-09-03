@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-Widget Menu_Card(BuildContext context,int index,List lst)
+import 'package:untitled/controller/home_controller.dart';
+import 'package:get/get.dart';
+HomeController homex=Get.put(HomeController());
+Widget Menu_Card(BuildContext context,int index)
 {
   return Container(
     height: 100,
@@ -9,8 +12,8 @@ Widget Menu_Card(BuildContext context,int index,List lst)
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset("${lst[index]["item_pic"]}",height: 40,width: 40),
-        Text("${lst[index]['item_name']}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)
+        Image.asset("${homex.menu[index]["item_pic"]}",height: 40,width: 40),
+        Text("${homex.menu[index]['item_name']}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)
       ],
     ),
     decoration: BoxDecoration(

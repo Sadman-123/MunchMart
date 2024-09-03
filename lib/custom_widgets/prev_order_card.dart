@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-Widget PrevOrderCard(int index, List arr) {
+import 'package:get/get.dart';
+import 'package:untitled/controller/home_controller.dart';
+HomeController hom=Get.put(HomeController());
+Widget PrevOrderCard(int index) {
   return Container(
     height: 300,
     width: 240,
@@ -22,7 +25,7 @@ Widget PrevOrderCard(int index, List arr) {
               width: 240,
               height: 120,
               child: Image.network(
-                "${arr[index]['prev_order_pic']}",
+                "${hom.prev_orders[index]['prev_order_pic']}",
                 height: 100,
                 width: 240,
                 fit: BoxFit.cover,
@@ -44,7 +47,7 @@ Widget PrevOrderCard(int index, List arr) {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "${arr[index]['prev_order_item']}",
+                    "${hom.prev_orders[index]['prev_order_item']}",
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w900,
@@ -53,7 +56,7 @@ Widget PrevOrderCard(int index, List arr) {
                   ),
                   SizedBox(width: 10),
                   Text(
-                    "${arr[index]['prev_order_review']}",
+                    "${hom.prev_orders[index]['prev_order_review']}",
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ],
@@ -66,7 +69,7 @@ Widget PrevOrderCard(int index, List arr) {
                   ),
                   SizedBox(width: 12),
                   Text(
-                    "${arr[index]['prev_order_loc']}",
+                    "${hom.prev_orders[index]['prev_order_loc']}",
                     style: TextStyle(color: Colors.black87),
                   ),
                 ],
@@ -76,7 +79,7 @@ Widget PrevOrderCard(int index, List arr) {
                 children: [
                   Icon(Icons.delivery_dining, size: 22),
                   Text(
-                    "${arr[index]['prev_order_delivery_charge']}",
+                    "${hom.prev_orders[index]['prev_order_delivery_charge']}",
                     style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
                   ),
                 ],

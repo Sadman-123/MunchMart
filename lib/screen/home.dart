@@ -1,48 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/custom_widgets/footer_ad.dart';
 import 'package:untitled/custom_widgets/prev_orders.dart';
 import 'package:untitled/screen/components/mydrawe.dart';
 import '../custom_widgets/menu_card.dart';
 import '../custom_widgets/promotional_banner.dart';
 import '../custom_widgets/popular_shops.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
-  var lst = [
-    {
-      "item_pic": "assets/restaurant.png",
-      "item_name": "Food Delivery"
-    },
-    {
-      "item_pic": "assets/shopping-cart.png",
-      "item_name": "Shop"
-    },
-    {
-      "item_pic": "assets/delivery.png",
-      "item_name": "Pick Up"
-    },
-    {
-      "item_pic": "assets/home_delivery.png",
-      "item_name": "Home Delivery"
-    },
-  ];
-  var popular_shop_list = [
-    {
-      "shop_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn4ZKvNJsQKNAd23vsjNaVxq-D_o77F8ru8Q&s",
-      "deal": 1.toString()
-    },
-    {
-      "shop_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrmHaipOrtaZaYddPByckO-4jT17Ueaz4Uvg&s",
-      "deal": 4.toString()
-    },
-    {
-      "shop_pic": "https://www.satv.tv/wp-content/uploads/2024/01/shwapno-logo-1.jpg",
-      "deal": 3.toString()
-    },
-    {
-      "shop_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ7_B-OLpbA8poBh7GlvKlWYxCyu4KLHJEXA&s",
-      "deal": 2.toString()
-    },
-  ];
+  HomeController homex=Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,13 +62,13 @@ class Home extends StatelessWidget {
               child: GridView.builder(
                 shrinkWrap: true, // Important to prevent GridView from expanding infinitely
                 physics: NeverScrollableScrollPhysics(), // Disable scrolling inside GridView
-                itemCount: lst.length,
+                itemCount: homex.menu.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1.8,
                 ),
                 itemBuilder: (context, index) {
-                  return Menu_Card(context, index, lst);
+                  return Menu_Card(context, index);
                 },
               ),
             ),
@@ -115,7 +82,7 @@ class Home extends StatelessWidget {
             SizedBox(height: 5),
             Order_Again(),
             SizedBox(height: 5,),
-            PopularShops(popular_shop_list),
+            PopularShops(),
             SizedBox(height: 5,),
             Footer_Ad()
           ],
