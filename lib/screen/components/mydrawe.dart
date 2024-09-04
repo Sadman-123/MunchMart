@@ -16,6 +16,7 @@ Widget MyDrawer()
           ),
         ),
         ListTile(
+          onTap: (){},
           title: Text("Refund Account"),
           subtitle: Text("Balance and Payment Methods"),
           trailing: Container(
@@ -28,34 +29,44 @@ Widget MyDrawer()
           ),
         ),
         ListTile(
+          onTap: (){},
           leading: Icon(CupertinoIcons.money_dollar),
           title: Text("Try us for free now"),
         ),
 
         ListTile(
+          onTap: (){},
           leading: Icon(CupertinoIcons.gift),
           title: Text("Offers"),
         ),
 
-        ListTile(title: Text("Voucher"),leading: Icon(CupertinoIcons.ticket_fill),),
+        ListTile(onTap: (){},
+          title: Text("Voucher"),leading: Icon(CupertinoIcons.ticket_fill),),
 
-        ListTile(title: Text("Favourites"),leading: Icon(CupertinoIcons.star),),
+        ListTile(onTap: (){},
+          title: Text("Favourites"),leading: Icon(CupertinoIcons.star),),
 
-        ListTile(title: Text("Orders and Recordings"),leading: Icon(CupertinoIcons.time),),
+        ListTile(onTap: (){},
+          title: Text("Orders and Recordings"),leading: Icon(CupertinoIcons.time),),
 
-        ListTile(title: Text("View Profile"),leading: Icon(CupertinoIcons.person),),
+        ListTile(onTap: (){},
+          title: Text("View Profile"),leading: Icon(CupertinoIcons.person),),
 
-        ListTile(title: Text("Addresses"),leading: Icon(CupertinoIcons.map_pin),),
+        ListTile(onTap: (){},
+          title: Text("Addresses"),leading: Icon(CupertinoIcons.map_pin),),
 
-        ListTile(title: Text("Rewards"),leading: Icon(CupertinoIcons.gift_alt),),
+        ListTile(onTap: (){},
+          title: Text("Rewards"),leading: Icon(CupertinoIcons.gift_alt),),
 
-        ListTile(title: Text("Invite Friends"),leading: Icon(CupertinoIcons.group),),
+        ListTile(onTap: (){},
+          title: Text("Invite Friends"),leading: Icon(CupertinoIcons.group),),
 
-        ListTile(title: Text("Settings"),),
+        ListTile(
+          onTap: (){},title: Text("Settings"),),
 
-        ListTile(title: Text("Terms and Condition / Policy"),),
+        ListTile(onTap: (){},title: Text("Terms and Condition / Policy"),),
 
-        ListTile(title: Text("Logout"),)
+        ListTile(onTap: (){},title: Text("Logout"),)
       ],
     ),
   );
