@@ -38,6 +38,7 @@ dependencies:
   rename_app: ^1.6.1
   get: ^4.6.6
   http: ^1.2.2
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

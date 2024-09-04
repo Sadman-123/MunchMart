@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
-HomeController home2=Get.put(HomeController());
+final HomeController homeController = Get.find(); // Reuse the existing instance
+
 Widget PopularShops()
 {
- return Container(
+ return Obx(()=>Container(
    margin: EdgeInsets.all(10),
    child: Column(
      crossAxisAlignment: CrossAxisAlignment.start,
      children: [
        Text("Popular Shops",style: TextStyle(fontSize: 25.5,fontWeight: FontWeight.w900),),
-       Container(
+       homeController.popular_shop_list.isEmpty?Center(child: CircularProgressIndicator(color: Colors.pink,),):Container(
          width: 400,
          height: 170,
          child: ListView.builder(
            scrollDirection: Axis.horizontal,
-           itemCount:home2.popular_shop_list.length ,
+           itemCount:homeController.popular_shop_list.length ,
            itemBuilder: (context, index) {
-             return  Container(
+             return Container(
                height: 140,
                width: 140,
                decoration: BoxDecoration(
@@ -25,20 +26,21 @@ Widget PopularShops()
                  image: DecorationImage(
                    fit: BoxFit.cover,
                    image: NetworkImage(
-                     "${home2.popular_shop_list[index]['shop_pic']}",
+                     "${homeController.popular_shop_list[index]['shop_pic']}",
                    ),
                  ),
                ),
                child: Align(
                    alignment: Alignment(0, 1),
-                   child: Chip(label: Text("${home2.popular_shop_list[index]['deal']} deal"))
+                   child: Chip(label:Text("${homeController.popular_shop_list[index]['deal']} deal"))
                ),
                margin: EdgeInsets.all(10),
              );
+
            },
          ),
        )
      ],
    ),
- );
+ ));
 }

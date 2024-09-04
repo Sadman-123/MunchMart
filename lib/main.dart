@@ -1,9 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
+import 'package:untitled/custom_widgets/prev_order_card.dart';
 import 'package:untitled/screen/home.dart';
 void main()
 {
+  Get.put(HomeController());
   runApp(Main());
 }
 class Main extends StatelessWidget
@@ -13,6 +16,7 @@ class Main extends StatelessWidget
     return GetMaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
           foregroundColor: Colors.black,
           color: Colors.white,
