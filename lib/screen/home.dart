@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/custom_widgets/footer_ad.dart';
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(9.0),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.favorite_border, color: Colors.pink, size: 29),
+              icon: Icon(CupertinoIcons.star, color: Colors.pink, size: 29),
             ),
           ),
           Padding(
@@ -48,7 +49,7 @@ class Home extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "What are you looking for?",
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: Icon(CupertinoIcons.search),
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.all(15),
                   ),

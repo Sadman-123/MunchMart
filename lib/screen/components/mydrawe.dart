@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 Widget MyDrawer()
 {
@@ -27,28 +28,28 @@ Widget MyDrawer()
           ),
         ),
         ListTile(
-          leading: Icon(Icons.paid_outlined),
+          leading: Icon(CupertinoIcons.money_dollar),
           title: Text("Try us for free now"),
         ),
 
         ListTile(
-          leading: Icon(Icons.local_offer),
+          leading: Icon(CupertinoIcons.gift),
           title: Text("Offers"),
         ),
 
-        ListTile(title: Text("Voucher"),leading: Icon(Icons.card_giftcard),),
+        ListTile(title: Text("Voucher"),leading: Icon(CupertinoIcons.ticket_fill),),
 
-        ListTile(title: Text("Favourites"),leading: Icon(Icons.favorite_border),),
+        ListTile(title: Text("Favourites"),leading: Icon(CupertinoIcons.star),),
 
-        ListTile(title: Text("Orders and Recordings"),leading: Icon(Icons.history),),
+        ListTile(title: Text("Orders and Recordings"),leading: Icon(CupertinoIcons.time),),
 
-        ListTile(title: Text("View Profile"),leading: Icon(Icons.person),),
+        ListTile(title: Text("View Profile"),leading: Icon(CupertinoIcons.person),),
 
-        ListTile(title: Text("Addresses"),leading: Icon(Icons.pin_drop),),
+        ListTile(title: Text("Addresses"),leading: Icon(CupertinoIcons.map_pin),),
 
-        ListTile(title: Text("Rewards"),leading: Icon(Icons.celebration),),
+        ListTile(title: Text("Rewards"),leading: Icon(CupertinoIcons.gift_alt),),
 
-        ListTile(title: Text("Invite Friends"),leading: Icon(Icons.group),),
+        ListTile(title: Text("Invite Friends"),leading: Icon(CupertinoIcons.group),),
 
         ListTile(title: Text("Settings"),),
 
