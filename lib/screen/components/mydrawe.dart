@@ -26,35 +26,34 @@ Widget MyDrawer()
               child: Text("Tk 10",style: TextStyle(fontSize: 12,color: Colors. black,fontWeight: FontWeight.w900),)
           ),
         ),
-        Divider(),
         ListTile(
           leading: Icon(Icons.paid_outlined),
           title: Text("Try us for free now"),
         ),
-        Divider(),
+
         ListTile(
           leading: Icon(Icons.local_offer),
           title: Text("Offers"),
         ),
-        Divider(),
+
         ListTile(title: Text("Voucher"),leading: Icon(Icons.card_giftcard),),
-        Divider(),
+
         ListTile(title: Text("Favourites"),leading: Icon(Icons.favorite_border),),
-        Divider(),
+
         ListTile(title: Text("Orders and Recordings"),leading: Icon(Icons.history),),
-        Divider(),
+
         ListTile(title: Text("View Profile"),leading: Icon(Icons.person),),
-        Divider(),
+
         ListTile(title: Text("Addresses"),leading: Icon(Icons.pin_drop),),
-        Divider(),
+
         ListTile(title: Text("Rewards"),leading: Icon(Icons.celebration),),
-        Divider(),
+
         ListTile(title: Text("Invite Friends"),leading: Icon(Icons.group),),
-        Divider(),
+
         ListTile(title: Text("Settings"),),
-        Divider(),
+
         ListTile(title: Text("Terms and Condition / Policy"),),
-        Divider(),
+
         ListTile(title: Text("Logout"),)
       ],
     ),

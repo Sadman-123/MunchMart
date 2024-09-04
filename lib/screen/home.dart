@@ -7,6 +7,7 @@ import '../custom_widgets/menu_card.dart';
 import '../custom_widgets/promotional_banner.dart';
 import '../custom_widgets/popular_shops.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class Home extends StatelessWidget {
   final HomeController homeController = Get.find();
@@ -20,7 +21,7 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(9.0),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.favorite, color: Colors.pink, size: 29),
+              icon: Icon(Icons.favorite_border, color: Colors.pink, size: 29),
             ),
           ),
           Padding(
@@ -33,7 +34,7 @@ class Home extends StatelessWidget {
       ),
       drawer: MyDrawer(),
       body: Obx((){
-        return SingleChildScrollView(
+        return homeController.menu.isEmpty?Center(child: LoadingAnimationWidget.beat(color: Colors.pink, size: 60),):SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: 20),
