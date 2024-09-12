@@ -16,7 +16,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> getPrevOrders() async {
-    var url = Uri.parse("https://munch-mart-server.onrender.com/prev_orders");
+    var url = Uri.parse("https://munch-mart-server-lmie.vercel.app/prev_orders");
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
@@ -31,7 +31,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> getMenu() async {
-    var url = Uri.parse("https://munch-mart-server.onrender.com/menu");
+    var url = Uri.parse("https://munch-mart-server-lmie.vercel.app/menu");
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
@@ -46,7 +46,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> getPopularShopList() async {
-    var url = Uri.parse("https://munch-mart-server.onrender.com/popular_shop_list");
+    var url = Uri.parse("https://munch-mart-server-lmie.vercel.app/popular_shop_list");
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
