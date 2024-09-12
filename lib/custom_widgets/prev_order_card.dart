@@ -34,7 +34,7 @@ Widget PrevOrderCard(int index) {
                   ),
                   Positioned(
                       right: 12,
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.favorite,color: Colors.pink,size: 34,))
+                      child: IconButton(onPressed: (){}, icon: Icon(Icons.favorite,color: Colors.red,size: 34,))
                   )
                 ]
             ),

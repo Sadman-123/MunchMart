@@ -19,7 +19,7 @@ Widget Menu_Card(BuildContext context,int index)
         ],
       ),
       decoration: BoxDecoration(
-          color: Colors.pink.shade500,
+          color: Colors.amber,
           borderRadius: BorderRadius.circular(10)
       ),
     );

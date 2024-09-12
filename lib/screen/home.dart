@@ -14,6 +14,8 @@ class Home extends StatelessWidget {
   final HomeController homeController = Get.find();
   @override
   Widget build(BuildContext context) {
+    var mdw=MediaQuery.of(context).size.width;
+    var mdh=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
@@ -22,7 +24,7 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(9.0),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(CupertinoIcons.star, color: Colors.pink, size: 29),
+              icon: Icon(CupertinoIcons.star, color: Colors.blueAccent, size: 29),
             ),
           ),
           Padding(

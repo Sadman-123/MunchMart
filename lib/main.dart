@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
@@ -7,13 +8,21 @@ import 'package:untitled/screen/home.dart';
 void main()
 {
   Get.put(HomeController());
-  runApp(Main());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => Main(),
+    ),
+  );
 }
 class Main extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
@@ -24,15 +33,15 @@ class Main extends StatelessWidget
           centerTitle: false,
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.blueAccent,
           labelStyle: TextStyle(
-            color: Colors.white
+            color: Colors.black
           )
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.pink),
-            foregroundColor: MaterialStateProperty.all(Colors.white)
+            backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+            foregroundColor: MaterialStateProperty.all(Colors.black)
           )
         ),
         inputDecorationTheme: InputDecorationTheme(
