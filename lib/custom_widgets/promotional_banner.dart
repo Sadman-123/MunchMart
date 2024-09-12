@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:untitled/controller/home_controller.dart';
 class PromotionalBanner extends StatelessWidget{
   final bool sponsored;
   final String title;
+  final String name;
+  final String price;
   final String content;
   final String pic;
   const PromotionalBanner(
@@ -9,10 +13,12 @@ class PromotionalBanner extends StatelessWidget{
         required this.title,
         required this.content,
         required this.pic,
-        required this.sponsored
+        required this.sponsored,
+        required this.name, required this.price
       });
   @override
   Widget build(BuildContext context) {
+    HomeController controller=Get.find();
     final themee=Theme.of(context);
     bool give_clr()
     {
@@ -52,7 +58,11 @@ class PromotionalBanner extends StatelessWidget{
                   children: [Text("$content",style: TextStyle(color: give_clr()?Colors.black54:Colors.black54),)],
                 ),
                 SizedBox(height: 8,),
-                ElevatedButton(onPressed: (){}, child: Text("Order Now"))
+                ElevatedButton(onPressed: (){
+                  final stk=SnackBar(content: Text("1 Excel Ordered Successfully"));
+                  ScaffoldMessenger.of(context).showSnackBar(stk);
+                  controller.add_to_cart(pic, name, price);
+                }, child: Text("Order Now"))
               ],
             ),
           ),

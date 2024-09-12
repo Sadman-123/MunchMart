@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/custom_widgets/footer_ad.dart';
+import 'package:untitled/custom_widgets/mychart.dart';
 import 'package:untitled/custom_widgets/prev_orders.dart';
 import 'package:untitled/screen/components/mydrawe.dart';
 import '../custom_widgets/menu_card.dart';
@@ -23,8 +24,10 @@ class Home extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(9.0),
             child: IconButton(
-              onPressed: () {},
-              icon: Icon(CupertinoIcons.star, color: Colors.blueAccent, size: 29),
+              onPressed: () {
+                Get.to(Mychart());
+              },
+              icon: Icon(CupertinoIcons.cart, color: Colors.blueAccent, size: 29),
             ),
           ),
           Padding(
@@ -79,6 +82,8 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 1),
               PromotionalBanner(
+                name: "Surf excel",
+                price:"110",
                 title: "Buy 1 Get 1 Free",
                 content: "Best offer of Surf Excel Matic Liquid",
                 pic: "https://www.hul.co.in/content-images/92ui5egz/production/6b1084c73784a3935b26963ce87000c0af1a9343-1920x1080.jpg?rect=1,0,1919,1080&w=375&h=211&fit=crop&auto=format",

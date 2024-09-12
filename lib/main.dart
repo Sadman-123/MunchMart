@@ -3,6 +3,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
+import 'package:untitled/custom_widgets/mychart.dart';
 import 'package:untitled/custom_widgets/prev_order_card.dart';
 import 'package:untitled/custom_widgets/prev_order_details.dart';
 import 'package:untitled/screen/home.dart';

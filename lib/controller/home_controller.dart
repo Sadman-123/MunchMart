@@ -6,6 +6,7 @@ class HomeController extends GetxController {
   RxList<dynamic> menu = <dynamic>[].obs;
   RxList<dynamic> prev_orders = <dynamic>[].obs;
   RxList<dynamic> popular_shop_list = <dynamic>[].obs;
+  RxList<dynamic>mycarts=[].obs;
 
   @override
   void onInit() {
@@ -58,5 +59,15 @@ class HomeController extends GetxController {
     } catch (e) {
       print("Exception fetching popular shop list: $e");
     }
+  }
+  void add_to_cart(String pic,String name,String price)
+  {
+    mycarts.add(
+      {
+        "cart_pic":pic,
+        "cart_name":name,
+        "cart_price":price
+      }
+    );
   }
 }
