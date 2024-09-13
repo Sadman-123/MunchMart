@@ -70,4 +70,8 @@ class HomeController extends GetxController {
       }
     );
   }
+  void delete_from_cart(int index)
+  {
+    mycarts.removeAt(index);
+  }
 }

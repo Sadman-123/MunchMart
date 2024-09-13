@@ -11,7 +11,6 @@ import '../custom_widgets/promotional_banner.dart';
 import '../custom_widgets/popular_shops.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
 class Home extends StatelessWidget {
   final HomeController homeController = Get.find();
   @override
@@ -30,7 +29,7 @@ class Home extends StatelessWidget {
                 badgeContent: Text("${homeController.mycarts.length}"),
                 child: IconButton(
                   onPressed: () {
-                    Get.to(Mychart());
+                    Get.to(()=>Mychart());
                   },
                   icon: Icon(CupertinoIcons.cart, color: Colors.blueAccent, size: 29),
                 ),
@@ -67,7 +66,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              homeController.menu.isEmpty?Center(child: CircularProgressIndicator(color: Colors.pink,),):Container(
+              homeController.menu.isEmpty?Center(child: CircularProgressIndicator(color: Colors.blueAccent,),):Container(
                 // Adjust the height here as needed
                 constraints: BoxConstraints(
                   minHeight: 220,

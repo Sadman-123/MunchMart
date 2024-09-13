@@ -25,7 +25,7 @@ class PrevOrderDetails extends StatelessWidget{
             child: Column(
               children: [
                 Container(
-                  child: Hero(tag: "pic", child: Container(
+                  child: Hero(tag: "pic${xx}", child: Container(
                     height: mdh*0.34,
                     width: double.infinity,
                     decoration: BoxDecoration(

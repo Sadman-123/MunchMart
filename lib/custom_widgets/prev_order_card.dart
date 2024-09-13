@@ -35,7 +35,7 @@ Widget PrevOrderCard(int index) {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      tag: "pic",
+                      tag: "pic${index}",
                     ),
                     Positioned(
                         right: 12,
@@ -97,7 +97,7 @@ Widget PrevOrderCard(int index) {
         ),
       ),
       onTap: (){
-        Get.to(PrevOrderDetails(xx: index,));
+        Get.to(()=>PrevOrderDetails(xx: index,));
       },
     );
   });

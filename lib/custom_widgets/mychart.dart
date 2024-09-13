@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
-import 'package:untitled/custom_widgets/menu_card.dart';
 class Mychart extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,20 @@ class Mychart extends StatelessWidget{
           itemCount: controller.mycarts.length,
           itemBuilder: (context, index) {
             return Dismissible(
-              key: Key(index.toString()),
+              key: UniqueKey(),
               child: Obx(()=>Chart_Tile(
                 picurl: controller.mycarts[index]['cart_pic'],
                 name: controller.mycarts[index]['cart_name'],
                 price: controller.mycarts[index]['cart_price'],
-              ),)
+              ),),
+              onDismissed: (direction) {
+                Fluttertoast.showToast(
+                    msg: "${controller.mycarts[index]['cart_name']} Removed Successfully",
+                    gravity: ToastGravity.BOTTOM,
+                    backgroundColor: Colors.red.shade500
+                );
+                controller.delete_from_cart(index);
+              },
             );
           },
         );
