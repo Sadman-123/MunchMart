@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/screen/components/mydrawe.dart';
@@ -92,6 +93,11 @@ class PrevOrderDetails extends StatelessWidget{
                   SizedBox(height: mdh*0.01,),
                   ElevatedButton(
                     onPressed: () {
+                      Fluttertoast.showToast(
+                          msg: "Ordered again ${controller.prev_orders[xx]['prev_order_item']} Successfully",
+                          gravity: ToastGravity.BOTTOM,
+                          backgroundColor: Colors.green.shade400
+                      );
                       controller.add_to_cart(
                           controller.prev_orders[xx]['prev_order_pic'],
                           controller.prev_orders[xx]['prev_order_item'],

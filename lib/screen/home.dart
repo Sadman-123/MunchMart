@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/home_controller.dart';
 import 'package:untitled/custom_widgets/footer_ad.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:untitled/custom_widgets/mychart.dart';
 import 'package:untitled/custom_widgets/prev_orders.dart';
 import 'package:untitled/screen/components/mydrawe.dart';
@@ -21,15 +22,20 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home"),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(9.0),
-            child: IconButton(
-              onPressed: () {
-                Get.to(Mychart());
-              },
-              icon: Icon(CupertinoIcons.cart, color: Colors.blueAccent, size: 29),
-            ),
-          ),
+          Obx(()=>Padding(
+              padding: const EdgeInsets.all(9.0),
+              child: badges.Badge(
+                showBadge: homeController.mycarts.isEmpty?false:true,
+                badgeStyle: badges.BadgeStyle(badgeColor: Colors.blueAccent),
+                badgeContent: Text("${homeController.mycarts.length}"),
+                child: IconButton(
+                  onPressed: () {
+                    Get.to(Mychart());
+                  },
+                  icon: Icon(CupertinoIcons.cart, color: Colors.blueAccent, size: 29),
+                ),
+              )
+          ),),
           Padding(
             padding: const EdgeInsets.all(9.0),
             child: CircleAvatar(
@@ -40,7 +46,7 @@ class Home extends StatelessWidget {
       ),
       drawer: MyDrawer(),
       body: Obx((){
-        return homeController.menu.isEmpty?Center(child: LoadingAnimationWidget.beat(color: Colors.pink, size: 60),):SingleChildScrollView(
+        return homeController.menu.isEmpty?Center(child: LoadingAnimationWidget.beat(color: Colors.blueAccent, size: 60),):SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: 20),

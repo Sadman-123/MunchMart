@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:untitled/controller/home_controller.dart';
 class PromotionalBanner extends StatelessWidget{
   final bool sponsored;
@@ -59,8 +60,11 @@ class PromotionalBanner extends StatelessWidget{
                 ),
                 SizedBox(height: 8,),
                 ElevatedButton(onPressed: (){
-                  final stk=SnackBar(content: Text("1 Excel Ordered Successfully"));
-                  ScaffoldMessenger.of(context).showSnackBar(stk);
+                 Fluttertoast.showToast(
+                   msg: "Ordered Successfully",
+                   gravity: ToastGravity.BOTTOM,
+                   backgroundColor: Colors.green.shade400
+                 );
                   controller.add_to_cart(pic, name, price);
                 }, child: Text("Order Now"))
               ],

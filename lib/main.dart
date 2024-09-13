@@ -1,21 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controller/home_controller.dart';
-import 'package:untitled/custom_widgets/mychart.dart';
-import 'package:untitled/custom_widgets/prev_order_card.dart';
-import 'package:untitled/custom_widgets/prev_order_details.dart';
 import 'package:untitled/screen/home.dart';
 void main()
 {
   Get.put(HomeController());
-  runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => Main(),
-    ),
-  );
+  runApp(Main());
 }
 class Main extends StatelessWidget
 {
@@ -24,9 +14,6 @@ class Main extends StatelessWidget
     var mdw=MediaQuery.of(context).size.width;
     var mdh=MediaQuery.of(context).size.height;
     return GetMaterialApp(
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
